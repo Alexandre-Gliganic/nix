@@ -7,7 +7,6 @@
     awscli2
     bat
     coreutils
-    discord
     dnsutils
     fd
     fzf
