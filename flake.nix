@@ -19,18 +19,18 @@
     in
     {
       nixosConfigurations = {
-        forge-alex-nuc = lib.nixosSystem {
+        nuc-forge = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
 
             ./modules/alex.nix
-            ./systems/forge-nuc/default.nix
+            ./systems/nuc-forge/default.nix
 
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.alex = import ./home/forge-nuc/default.nix;
+              home-manager.users.alex = import ./home/nuc-forge/default.nix;
             }
           ];
         };

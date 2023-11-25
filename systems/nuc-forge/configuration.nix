@@ -12,7 +12,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "forge-alex-nuc"; # Define your hostname.
+  networking.hostName = "nuc-forge"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   networking.firewall.checkReversePath = "loose";
