@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   programs.git = {
-    enable = true;
 
     userName = "Alexandre Gliganic";
     userEmail = "alexandre.gliganic@epita.fr";

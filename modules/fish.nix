@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   programs.fish = {
-    enable = true;
     plugins = [
       {
         name = "autopair";

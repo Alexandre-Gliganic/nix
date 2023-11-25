@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   programs.neovim = {
-    enable = true;
     plugins = with pkgs.vimPlugins; [ vim-nix vim-terraform ansible-vim copilot-vim ];
     vimAlias = true;
     extraConfig = ''
