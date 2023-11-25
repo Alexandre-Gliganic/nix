@@ -30,6 +30,9 @@
     gpg-agent.enable = true;
   };
 
-  home.sessionVariables = { EDITOR = "nvim"; PAGER = "bat"; };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    PAGER = "bat";
+  };
 
 }

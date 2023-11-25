@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    alacritty
     ansible
     any-nix-shell
     awscli2
@@ -9,11 +10,14 @@
     dnsutils
     fd
     fzf
+    gcc
     git-lfs
+    go
     glow
     htop
     inetutils
     ipcalc
+    jdk17_headless
     jq
     kubectl
     kustomize
@@ -25,6 +29,7 @@
     nix
     nix-prefetch-git
     nixpkgs-fmt
+    nodejs_20
     novnc
     nmap
     openssh

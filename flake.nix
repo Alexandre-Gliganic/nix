@@ -15,7 +15,6 @@
       pkgs = import nixpkgs {
         config.allowUnfree = true;
       };
-
     in
     {
       nixosConfigurations = {
@@ -41,6 +40,20 @@
           modules = [
 
             ./home/mac-mini/default.nix
+
+            {
+              home = {
+                username = "alex";
+                homeDirectory = "/Users/alex";
+              };
+            }
+          ];
+        };
+        mbp = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+          modules = [
+
+            ./home/mbp/default.nix
 
             {
               home = {
