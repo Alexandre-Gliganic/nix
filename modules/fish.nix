@@ -36,12 +36,12 @@
     #  . ~/.nix-profile/etc/profile.d/nix.fish
     #'';
     interactiveShellInit = ''
-      any-nix-shell fish --info-right | source
       set -x PATH "$PATH:$HOME/.config/yarn/global/node_modules/.bin"
     '';
     shellInit = ''
       export BAT_THEME="Sublime Snazzy"
       fzf_configure_bindings
+      any-nix-shell fish --info-right | source
     '';
 
     functions = {

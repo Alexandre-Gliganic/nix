@@ -35,5 +35,22 @@
           ];
         };
       };
+      homeConfigurations = {
+        mac-mini = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+          modules = [
+
+              ./home/mac-mini/default.nix
+
+            {
+              home = {
+                username = "alex";
+                homeDirectory = "/Users/alex";
+
+              };
+            }
+          ];
+        };
+      };
     };
 }

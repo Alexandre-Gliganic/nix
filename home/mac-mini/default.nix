@@ -12,8 +12,7 @@
       ../../modules/zoxide.nix
     ];
 
-  home.homeDirectory = "/home/alex";
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "22.11"; # Please read the comment before changing.
 
   programs.home-manager.enable = true;
 
