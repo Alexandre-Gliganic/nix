@@ -33,9 +33,9 @@
 
     ];
 
-    loginShellInit = ''
-      . ~/.nix-profile/etc/profile.d/nix.fish
-    '';
+    #loginShellInit = ''
+    #  . ~/.nix-profile/etc/profile.d/nix.fish
+    #'';
     interactiveShellInit = ''
       any-nix-shell fish --info-right | source
       set -x PATH "$PATH:$HOME/.config/yarn/global/node_modules/.bin"
