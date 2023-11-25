@@ -3,6 +3,7 @@
   imports =
     [
       ./packages.nix
+      ./git.nix
       ../../modules/direnv.nix
       ../../modules/fish.nix
       ../../modules/git.nix
