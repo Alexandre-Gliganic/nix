@@ -9,38 +9,29 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
   };
-  outputs = { self, nixpkgs, home-manager, flake-utils }:
+  outputs = { self, nixpkgs, home-manager, flake-utils } @ inputs:
     let
       lib = nixpkgs.lib;
+      pkgs = import nixpkgs {
+        config.allowUnfree = true;
+      };
 
-      pkgImport = pkgs: system:
-        import pkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
-          };
-        };
     in
     {
       nixosConfigurations = {
-        forge-nuc = lib.nixosSystem {
+        forge-alex-nuc = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
 
-            ./hardware/forge-nuc.nix
-            ./system/forge-nuc.nix
-            ./system/alex.nix
+            ./modules/alex.nix
+            ./systems/forge-nuc/default.nix
 
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.alex = import ./home/forge-nuc.nix;
-
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
+              home-manager.users.alex = import ./home/forge-nuc/default.nix;
             }
-
           ];
         };
       };

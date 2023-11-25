@@ -1,78 +1,5 @@
-{ config, pkgs, ... }:
-#let
-# Set all shell aliases programatically
-#  system = builtins.currentSystem;
-#in
+{ pkgs, ... }:
 {
-  imports =
-    [
-      # Include ssh config
-      # ./ssh.nix
-    ];
-  #home.username = "alex";
-  home.homeDirectory = "/home/alex";
-  #if system == "aarch64-darwin" || system == "x86_64-darwin" then "/Users/alex"
-  #else "/home/alex";
-
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "22.11"; # Please read the comment before changing.
-
-  home.packages = with pkgs; [
-    alacritty
-    ansible
-    any-nix-shell
-    awscli2
-    bat
-    coreutils
-    dnsutils
-    fd
-    fzf
-    gcc
-    git-lfs
-    go
-    glow
-    htop
-    inetutils
-    ipcalc
-    jdk17_headless
-    jq
-    kubectl
-    kustomize
-    ldns
-    lolcat
-    maven
-    mtr
-    neofetch
-    nix
-    nix-prefetch-git
-    nixpkgs-fmt
-    nodejs_20
-    novnc
-    nmap
-    openssh
-    python310Packages.pip
-    python311
-    tcptraceroute
-    terraform
-    trash-cli
-    tree
-    vault
-    watch
-    wget
-    yarn
-    zoxide
-  ];
-
-
-  home.file = { };
-
-  home.sessionVariables = { EDITOR = "nvim"; PAGER = "bat"; };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   programs.fish = {
     enable = true;
     plugins = [
@@ -167,7 +94,7 @@
         description = "git tag epita format";
         body = ''
           set current_dir (pwd)
-          set dir_name (basename $current_dir) 
+          set dir_name (basename $current_dir)
           git tag -a exercice-$dir_name-v$argv[1] -m $argv[1]
         '';
       };
@@ -180,71 +107,4 @@
     };
   };
 
-  programs.starship = {
-    enable = true;
-    settings = {
-      battery = {
-        disabled = true;
-      };
-    };
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.neovim = {
-    enable = true;
-    plugins = with pkgs.vimPlugins; [ vim-nix vim-terraform ansible-vim copilot-vim ];
-    vimAlias = true;
-    extraConfig = ''
-      set mouse=a
-      syntax on
-      " set textwidth=80
-      set nowrap
-      set shiftwidth=4
-      set softtabstop=-1
-      " set expandtab
-      set autoindent
-      set number
-      set colorcolumn=81
-      " set colorcolumn=+1
-      map f w
-    '';
-  };
-
-  programs.git = {
-    enable = true;
-
-    userName = "Alexandre Gliganic";
-    userEmail = "alexandre.gliganic@epita.fr";
-    signing = {
-      key = "F807F783C114DFA4";
-      signByDefault = true;
-    };
-
-    includes = [{
-      path = "/Users/alex/.gitconfig-forge";
-      condition = "gitdir:/Users/alex/Documents/EPITA/forge/";
-    }];
-    extraConfig = {
-      core = { editor = "nvim"; };
-      init = { defaultBranch = "main"; };
-      pull.rebase = true;
-      push.autoSetupRemote = true;
-    };
-  };
-  programs.ssh = {
-    enable = true;
-  };
-  services.gpg-agent = {
-    enable = true;
-    enableSshSupport = true;
-    pinentryFlavor = "qt";
-  };
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
 }
