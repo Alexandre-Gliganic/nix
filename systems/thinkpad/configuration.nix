@@ -47,16 +47,23 @@
         enableXfwm = false;
       };
     };
-    displayManager.defaultSession = "xfce";
+    displayManager.defaultSession = "xfce+i3";
     windowManager.i3 = { enable = true; };
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
+  hardware = {
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;
+      package = pkgs.pulseaudioFull;
+    };
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
-
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.pulseaudio = true;
 
   environment = {
     systemPackages = with pkgs; [
@@ -85,6 +92,8 @@
   };
 
   programs.fish.enable = true;
+
+  sound.enable = true;
 
   virtualisation.docker.enable = true;
 
