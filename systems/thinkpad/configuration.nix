@@ -47,6 +47,7 @@
         enableXfwm = false;
       };
     };
+    displayManager.defaultSession = "xfce";
     windowManager.i3 = { enable = true; };
   };
 
@@ -60,6 +61,7 @@
   environment = {
     systemPackages = with pkgs; [
       betterlockscreen
+      brightnessctl
       firefox
       git
       gnupg
