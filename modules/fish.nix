@@ -24,9 +24,9 @@
         name = "colored-man-pages.fish";
         src = pkgs.fetchFromGitHub {
           owner = "patrickf1";
-          repo = "colored_man_pages";
+          repo = "colored_man_pages.fish";
           rev = "main";
-          sha256 = "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
+          sha256 = "sha256-ii9gdBPlC1/P1N9xJzqomrkyDqIdTg+iCg0mwNVq2EU=";
         };
       }
 
