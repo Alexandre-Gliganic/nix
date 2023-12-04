@@ -34,7 +34,7 @@
           ];
         };
 
- 	 thinkpad = lib.nixosSystem {
+        thinkpad = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
 
