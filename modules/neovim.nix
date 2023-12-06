@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.neovim = {
-    plugins = with pkgs.vimPlugins; [ vim-nix vim-terraform ansible-vim copilot-vim ];
+    plugins = with pkgs.vimPlugins; [ vim-nix vim-terraform ansible-vim copilot-vim vim-airline vim-better-whitespace ];
     vimAlias = true;
     extraConfig = ''
       set mouse=a
