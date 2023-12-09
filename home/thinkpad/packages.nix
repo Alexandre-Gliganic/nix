@@ -23,6 +23,7 @@
     kubectl
     kustomize
     ldns
+    lunarvim
     lolcat
     maven
     mtr
