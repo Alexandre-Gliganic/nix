@@ -1,0 +1,3 @@
+[
+  (import ./idea-ultimate.nix)
+]

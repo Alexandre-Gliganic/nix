@@ -43,10 +43,11 @@
 
             home-manager.nixosModules.home-manager
             {
+              nixpkgs.overlays = ( import ./overlays );
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.alex = import ./home/thinkpad/default.nix;
-            }
+              home-manager.users.alex = import ./home/thinkpad/default.nix ;
+          }
           ];
         };
 

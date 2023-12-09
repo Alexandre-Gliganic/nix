@@ -1,4 +1,10 @@
 { pkgs, ... }:
+let
+  mkAlias = pkgsName: aliasName: pkgs.writeShellScriptBin "${aliasName}" ''
+    ${pkgsName}
+  '';
+  chrome = mkAlias "${pkgs.google-chrome}/bin/google-chrome-stable" "chrome";
+in
 {
   home.packages = with pkgs; [
     alacritty
@@ -6,18 +12,22 @@
     any-nix-shell
     awscli2
     bat
+    chrome
     coreutils
     discord
     dnsutils
     fd
+    font-awesome
     fzf
     gcc
     git-lfs
     go
     glow
+    google-chrome
     htop
     inetutils
     ipcalc
+    jetbrains.idea-ultimate
     jdk17_headless
     jq
     kubectl
@@ -26,8 +36,10 @@
     lunarvim
     lolcat
     maven
+    meslo-lgs-nf
     mtr
     neofetch
+    nload
     nix
     nix-prefetch-git
     nixpkgs-fmt
