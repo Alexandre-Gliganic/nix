@@ -12,11 +12,14 @@ in
     any-nix-shell
     awscli2
     bat
+    betterlockscreen
     chrome
     coreutils
     discord
     dnsutils
     fd
+    feh
+    flameshot
     font-awesome
     fzf
     gcc
@@ -31,6 +34,7 @@ in
     jdk17_headless
     jq
     kubectl
+    kitty
     kustomize
     ldns
     lunarvim
