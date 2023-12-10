@@ -92,8 +92,9 @@
     };
   };
 
-  programs.fish.enable = true;
-
+  programs = {
+    fish.enable = true;
+  };
   sound.enable = true;
 
   virtualisation.docker.enable = true;

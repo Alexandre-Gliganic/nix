@@ -13,7 +13,6 @@
       ../../modules/zoxide.nix
     ];
 
-  # nixpkgs.overlays = ( import ../../overlays );
 
   home.homeDirectory = "/home/alex";
   home.stateVersion = "23.11"; # Please read the comment before changing.
@@ -21,7 +20,6 @@
   programs.home-manager.enable = true;
 
   programs = {
-    command-not-found.enable = true;
     direnv.enable = true;
     fish.enable = true;
     git.enable = true;
