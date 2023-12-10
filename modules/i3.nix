@@ -14,18 +14,18 @@ in
     default_floating_border pixel 0
     for_window [class=".*"] border_radius 12
     exec i3-msg workspace 1
-    '';
+  '';
   config = {
     modifier = "Mod4";
     startup = [
       {
         command = "${pkgs.feh}/bin/feh --bg-fill ${background}";
         always = true;
-    }
-    {
+      }
+      {
         command = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ${background}";
         always = true;
-    }
+      }
     ];
 
     gaps = gaps;
@@ -56,7 +56,7 @@ in
         "${modifier}+Ctrl+Shift+h" = "move workspace to output left";
 
 
-        "${modifier}+Shit+x" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -l dim --off 480";
+        "${modifier}+Shift+x" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -l dim --off 480";
 
         "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'xfce4-session-logout'\"";
       };
