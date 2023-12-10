@@ -98,8 +98,17 @@
 
   virtualisation.docker.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 30d";
+    };
 
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+  };
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
