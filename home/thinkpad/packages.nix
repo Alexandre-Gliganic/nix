@@ -12,7 +12,6 @@ in
     any-nix-shell
     awscli2
     bat
-    betterlockscreen
     chrome
     coreutils
     discord

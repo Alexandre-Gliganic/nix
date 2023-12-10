@@ -75,6 +75,7 @@
       gnupg
       networkmanagerapplet
       neovim
+      vim
       wireguard-tools
       yubikey-personalization
     ];
