@@ -56,7 +56,7 @@ in
         "${modifier}+Ctrl+Shift+h" = "move workspace to output left";
 
 
-        "${modifier}+Shift+x" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -l dim --off 480";
+        "${modifier}+Shift+x" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -l blur --off 480";
 
         "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'xfce4-session-logout'\"";
       };
