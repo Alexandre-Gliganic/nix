@@ -78,6 +78,7 @@
       vim
       wireguard-tools
       yubikey-personalization
+      xsel
     ];
   };
 

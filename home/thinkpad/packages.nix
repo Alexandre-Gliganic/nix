@@ -54,6 +54,7 @@ in
     python311
     tcptraceroute
     terraform
+    thunderbird
     trash-cli
     tree
     vault
