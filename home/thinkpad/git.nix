@@ -3,7 +3,7 @@
   programs.git = {
     includes = [{
       path = "/home/alex/.gitconfig-forge";
-      condition = "gitdir:/home/alex/forge/";
+      condition = "gitdir:/home/alex/Documents/forge/";
     }];
   };
 }

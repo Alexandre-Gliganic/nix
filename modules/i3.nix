@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 let
-  background = builtins.toString ../f1.png;
+  background = "${../f1.png}";
   gaps = {
     inner = 12;
     outer = -12;
