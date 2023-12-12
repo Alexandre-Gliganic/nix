@@ -3,17 +3,24 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
   };
-  outputs = { self, nixpkgs, home-manager, flake-utils } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, flake-utils } @ inputs:
     let
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
         config.allowUnfree = true;
+      };
+      overlay-unstable = final: prev: rec {
+        unstable = import nixpkgs-unstable {
+            inherit (prev) system; # system = prev.system;
+            config.allowUnfree = true;
+        };
       };
     in
     {
@@ -37,16 +44,18 @@
         thinkpad = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 
             ./modules/alex.nix
             ./systems/thinkpad/default.nix
 
             home-manager.nixosModules.home-manager
             {
-              nixpkgs.overlays = (import ./overlays);
+              # nixpkgs.overlays = (import ./overlays);
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.alex = import ./home/thinkpad/default.nix;
+
             }
           ];
         };

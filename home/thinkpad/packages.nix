@@ -29,7 +29,7 @@ in
     htop
     inetutils
     ipcalc
-    jetbrains.idea-ultimate
+    unstable.jetbrains.idea-ultimate
     jdk17_headless
     jq
     kubectl
