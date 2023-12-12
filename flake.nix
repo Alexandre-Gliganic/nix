@@ -18,8 +18,8 @@
       };
       overlay-unstable = final: prev: rec {
         unstable = import nixpkgs-unstable {
-            inherit (prev) system; # system = prev.system;
-            config.allowUnfree = true;
+          inherit (prev) system; # system = prev.system;
+          config.allowUnfree = true;
         };
       };
     in
