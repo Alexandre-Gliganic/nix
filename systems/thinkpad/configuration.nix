@@ -90,7 +90,7 @@
     openssh = {
       enable = true;
       settings.PasswordAuthentication = false;
-      settings.KbdInteractrveAuthentication = false;
+      settings.KbdInteractiveAuthentication = false;
     };
   };
 
@@ -112,7 +112,7 @@
       experimental-features = [ "nix-command" "flakes" ];
     };
   };
-  # Configure keymap in X1
+  # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
 
