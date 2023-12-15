@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 let
-  background = "${../f1.png}";
+  background = "${../img/f1.png}";
   gaps = {
     inner = 12;
     outer = -12;
@@ -23,8 +23,13 @@ in
         always = true;
       }
       {
-        command = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ${background}";
+        command = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ${background} --fx blur";
         always = true;
+      }
+
+      {
+        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -s true";
+        always = false;
       }
     ];
 
@@ -55,8 +60,7 @@ in
         "${modifier}+Ctrl+Shift+j" = "move workspace to output down";
         "${modifier}+Ctrl+Shift+h" = "move workspace to output left";
 
-
-        "${modifier}+Shift+x" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -l blur --off 480";
+        "${modifier}+Shift+x" = "exec ${pkgs.xautolock}/bin/xautolock -locknow";
 
         "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'xfce4-session-logout'\"";
       };
