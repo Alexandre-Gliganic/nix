@@ -37,19 +37,49 @@
   #   useXkbConfig = true; # use xkbOptions in tty.
   # };
 
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
+  services = {
+    blueman.enable = true;
+    pcscd.enable = true;
+    udev.packages = with pkgs; [ yubikey-personalization ];
+    openssh = {
+      enable = false;
+      settings.PasswordAuthentication = false;
+      settings.KbdInteractiveAuthentication = false;
+    };
+
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager = {
+        xterm.enable = false;
+        xfce = {
+          enable = true;
+          noDesktop = true;
+          enableXfwm = false;
+        };
+      };
+      displayManager.defaultSession = "xfce+i3";
+      windowManager.i3 = { enable = true; };
+      xautolock = {
         enable = true;
-        noDesktop = true;
-        enableXfwm = false;
+        locker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
+        nowlocker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
+        time = 3; # autolock after 3 minutes
+        killtime = 10; # suspend after 10 minutes
+        killer = "/run/current-system/systemd/bin/systemctl suspend";
       };
     };
-    displayManager.defaultSession = "xfce+i3";
-    windowManager.i3 = { enable = true; };
+    logind = {
+      lidSwitch = "suspend";
+      lidSwitchDocked = "suspend";
+      lidSwitchExternalPower = "suspend";
+      extraConfig = ''
+        IdleAction=lock
+        HandlePowerKey=ignore
+      '';
+    };
+
+
   };
 
   hardware = {
@@ -83,19 +113,13 @@
   };
 
 
-  services = {
-    blueman.enable = true;
-    pcscd.enable = true;
-    udev.packages = with pkgs; [ yubikey-personalization ];
-    openssh = {
-      enable = true;
-      settings.PasswordAuthentication = false;
-      settings.KbdInteractiveAuthentication = false;
-    };
-  };
-
   programs = {
+    dconf.enable = true;
     fish.enable = true;
+    xss-lock = {
+      enable = true;
+      lockerCommand = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
+    };
   };
   sound.enable = true;
 
