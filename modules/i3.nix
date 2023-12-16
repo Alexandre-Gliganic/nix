@@ -18,6 +18,7 @@ in
   config = {
     modifier = "Mod4";
     startup = [
+      # Set background for current session and lockscreen
       {
         command = "${pkgs.feh}/bin/feh --bg-fill ${background}";
         always = true;
@@ -27,10 +28,38 @@ in
         always = true;
       }
 
+      # XFCE power manager and screensaver 
+
       {
         command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -s true";
         always = false;
       }
+      {
+        command = "xfconf-query -c xfce4-screensaver -p /lock/enabled -s false";
+        always = false;
+      }
+      {
+        command = "xfconf-query -c xfce4-screensaver -p /saver/enabled -s false";
+        always = false;
+      }
+      {
+        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/dpms-enabled -s false";
+        always = false;
+      }
+      {
+        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false";
+        always = false;
+      }
+
+      {
+        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/general-notification -s true";
+        always = false;
+      }
+      {
+        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s true";
+        always = false;
+      }
+
     ];
 
     gaps = gaps;
