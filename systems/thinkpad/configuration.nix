@@ -64,7 +64,7 @@
         enable = true;
         locker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
         nowlocker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
-        time = 3; # autolock after 3 minutes
+        time = 5; # autolock after 5 minutes
         killtime = 10; # suspend after 10 minutes
         killer = "/run/current-system/systemd/bin/systemctl suspend";
       };
@@ -136,6 +136,12 @@
       experimental-features = [ "nix-command" "flakes" ];
     };
   };
+
+
+  security.pki.certificateFiles = [
+    /home/alex/Documents/sysadmin/cert/OuiDoThings_-_Root_CA.crt
+    /home/alex/Documents/sysadmin/cert/CoreNinja_-_Root_CA.crt
+  ];
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
