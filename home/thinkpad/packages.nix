@@ -60,6 +60,7 @@ in
     vault
     watch
     wget
+    xca
     yarn
     zoxide
   ];
