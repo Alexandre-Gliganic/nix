@@ -7,7 +7,6 @@ let
 in
 {
   home.packages = with pkgs; [
-    alacritty
     ansible
     any-nix-shell
     awscli2
@@ -55,7 +54,6 @@ in
     tcptraceroute
     terraform
     thunderbird
-    trash-cli
     tree
     vault
     watch
