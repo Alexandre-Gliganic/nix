@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://nixos.org/" target="_blank">
-    <img alt="nixos" src="img/nixos.png" width="200px" />
+    <img alt="nixos" src="resources/nixos.png" width="200px" />
   </a>
 </p>
 

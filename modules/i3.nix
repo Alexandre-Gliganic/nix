@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 let
-  background = "${../img/f1.png}";
+  background = "${../resources/f1.png}";
   gaps = {
     inner = 12;
     outer = -12;
