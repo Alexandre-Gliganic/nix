@@ -28,8 +28,7 @@ in
         always = true;
       }
 
-      # XFCE power manager and screensaver 
-
+      # XFCE power manager and screensaver
       {
         command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -s true";
         always = false;
@@ -88,6 +87,9 @@ in
         "${modifier}+Ctrl+Shift+k" = "move workspace to output up";
         "${modifier}+Ctrl+Shift+j" = "move workspace to output down";
         "${modifier}+Ctrl+Shift+h" = "move workspace to output left";
+
+        "${modifier}+v" = "split v";
+        "${modifier}+g" = "split h";
 
         "${modifier}+Shift+x" = "exec ${pkgs.xautolock}/bin/xautolock -locknow";
 
