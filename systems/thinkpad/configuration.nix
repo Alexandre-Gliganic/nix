@@ -140,8 +140,8 @@
 
 
   security.pki.certificateFiles = [
-    /home/alex/Documents/sysadmin/cert/OuiDoThings-Root_CA.crt
-    /home/alex/Documents/sysadmin/cert/CoreNinja-Root_CA.crt
+    ../../resources/OuiDoThings_-_Root_CA.crt
+    ../../resources/CoreNinja_-_Root_CA.crt
   ];
   # Configure keymap in X11
   # services.xserver.layout = "us";
