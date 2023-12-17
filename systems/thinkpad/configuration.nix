@@ -66,7 +66,7 @@
         nowlocker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
         time = 5; # autolock after 5 minutes
         killtime = 10; # suspend after 10 minutes
-        killer = "/run/current-system/systemd/bin/systemctl suspend";
+        killer = "${pkgs.systemd}/bin/systemctl suspend";
       };
     };
     logind = {
@@ -98,8 +98,6 @@
 
   environment = {
     systemPackages = with pkgs; [
-      betterlockscreen
-      brightnessctl
       firefox
       git
       gnupg
@@ -143,6 +141,7 @@
     ../../resources/OuiDoThings_-_Root_CA.crt
     ../../resources/CoreNinja_-_Root_CA.crt
   ];
+
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
