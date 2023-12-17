@@ -30,32 +30,32 @@ in
 
       # XFCE power manager and screensaver
       {
-        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -s true";
+        command = "${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -s true";
         always = false;
       }
       {
-        command = "xfconf-query -c xfce4-screensaver -p /lock/enabled -s false";
+        command = "${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-screensaver -p /lock/enabled -s false";
         always = false;
       }
       {
-        command = "xfconf-query -c xfce4-screensaver -p /saver/enabled -s false";
+        command = "${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-screensaver -p /saver/enabled -s false";
         always = false;
       }
       {
-        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/dpms-enabled -s false";
+        command = "${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/dpms-enabled -s false";
         always = false;
       }
       {
-        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false";
+        command = "${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false";
         always = false;
       }
 
       {
-        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/general-notification -s true";
+        command = "${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/general-notification -s true";
         always = false;
       }
       {
-        command = "xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s true";
+        command = "${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s true";
         always = false;
       }
 
@@ -91,9 +91,14 @@ in
         "${modifier}+v" = "split v";
         "${modifier}+g" = "split h";
 
+        # Lockscreen with suspend after 10 minutes
         "${modifier}+Shift+x" = "exec ${pkgs.xautolock}/bin/xautolock -locknow";
 
-        "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'xfce4-session-logout'\"";
+        # Lockscreen with immediate suspend
+        "${modifier}+Shift+Semicolon" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -l blur & sleep 5 && ${pkgs.systemd}/bin/systemctl suspend";
+
+        # Logout with XFCE
+        "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' '${pkgs.xfce.xfce4-session}/bin/xfce4-session-logout'\"";
       };
 
     window.border = 0;
