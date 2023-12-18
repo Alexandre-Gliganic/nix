@@ -95,7 +95,7 @@ in
         "${modifier}+Shift+x" = "exec ${pkgs.xautolock}/bin/xautolock -locknow";
 
         # Lockscreen with immediate suspend
-        "${modifier}+Shift+Semicolon" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -l blur & sleep 5 && ${pkgs.systemd}/bin/systemctl suspend";
+        "${modifier}+Shift+semicolon" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -l blur & sleep 5 && ${pkgs.systemd}/bin/systemctl suspend";
 
         # Logout with XFCE
         "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' '${pkgs.xfce.xfce4-session}/bin/xfce4-session-logout'\"";
