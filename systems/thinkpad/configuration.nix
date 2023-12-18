@@ -64,7 +64,7 @@
         enable = true;
         locker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
         nowlocker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
-        time = 5; # autolock after 5 minutes
+        time = 4; # autolock after 4 minutes
         killtime = 10; # suspend after 10 minutes
         killer = "${pkgs.systemd}/bin/systemctl suspend";
       };
