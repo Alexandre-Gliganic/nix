@@ -32,6 +32,7 @@ in
     jdk17_headless
     jq
     kubectl
+    kubectx
     kitty
     kustomize
     ldns
@@ -51,6 +52,7 @@ in
     openssh
     python310Packages.pip
     python311
+    stern
     tcptraceroute
     terraform
     thunderbird
