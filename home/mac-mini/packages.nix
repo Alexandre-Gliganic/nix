@@ -16,6 +16,7 @@
     ipcalc
     jq
     kubectl
+    kubectx
     kustomize
     ldns
     lolcat
@@ -30,6 +31,7 @@
     openssh
     python310Packages.pip
     python311
+    stern
     tcptraceroute
     terraform
     trash-cli
