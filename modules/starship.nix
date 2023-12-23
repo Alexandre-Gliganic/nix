@@ -11,7 +11,7 @@
         detect_folders = [ "k8s" ];
       };
       os = {
-        disabled = false;
+        disabled = true;
         symbols = {
           Linux = " ";
           Windows = " ";
