@@ -68,7 +68,7 @@
 
                 registry = {
                   nixpkgs.flake = nixpkgs;
-                  nixpkgsUnstable.flake = nixpkgs-unstable;
+                  nixpkgs-unstable.flake = nixpkgs-unstable;
                 };
               };
             }
