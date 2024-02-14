@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-utils.url = "github:numtide/flake-utils";
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, flake-utils } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, flake-utils, nix-index-database } @ inputs:
     let
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
@@ -48,7 +52,7 @@
 
             ./modules/alex.nix
             ./systems/thinkpad/default.nix
-
+            nix-index-database.nixosModules.nix-index
             home-manager.nixosModules.home-manager
             {
               # nixpkgs.overlays = (import ./overlays);
@@ -56,6 +60,17 @@
               home-manager.useUserPackages = true;
               home-manager.users.alex = import ./home/thinkpad/default.nix;
 
+              nix = {
+                nixPath = [
+                  "nixpkgs=${nixpkgs}"
+                  "nixpkgs-unstable=${nixpkgs-unstable}"
+                ];
+
+                registry = {
+                  nixpkgs.flake = nixpkgs;
+                  nixpkgsUnstable.flake = nixpkgs-unstable;
+                };
+              };
             }
           ];
         };
