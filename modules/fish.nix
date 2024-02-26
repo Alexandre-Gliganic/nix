@@ -126,7 +126,7 @@
       sshl = { description = "List ssh"; body = "ssh-add -L"; wraps = "ssh-add"; };
       sshlcp = { description = "List ssh and copy"; body = "sshl | clipboard"; };
       sshkeygencp = { description = "Copy generate ssh key command"; body = "echo ssh-keygen -a 100 -t ed25519 | clipboard"; };
-      tf = { description = "terraform"; body = "terraform $argv"; wraps = "terraform"; };
+      tf = { description = "tofu"; body = "tofu $argv"; wraps = "tofu"; };
       #rm = { description = "Rm to bin"; body = "trash -i --trash-dir=$HOME/.Trash/ $argv"; };
     };
   };

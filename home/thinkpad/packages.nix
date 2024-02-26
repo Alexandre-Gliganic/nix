@@ -11,6 +11,7 @@ in
     any-nix-shell
     awscli2
     bat
+    bc
     chrome
     coreutils
     discord
@@ -50,11 +51,11 @@ in
     novnc
     nmap
     openssh
+    opentofu
     python310Packages.pip
     python311
     stern
     tcptraceroute
-    terraform
     thunderbird
     tree
     vault
