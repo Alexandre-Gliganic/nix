@@ -67,6 +67,7 @@
         time = 4; # autolock after 4 minutes
         killtime = 10; # suspend after 10 minutes
         killer = "${pkgs.systemd}/bin/systemctl suspend";
+        extraOptions = [ "-corners 0-0- -cornersize 30" ];
       };
     };
     logind = {
