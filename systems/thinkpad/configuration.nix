@@ -62,8 +62,8 @@
       windowManager.i3 = { enable = true; };
       xautolock = {
         enable = true;
-        locker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
-        nowlocker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
+        locker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l dim";
+        nowlocker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l dim";
         time = 4; # autolock after 4 minutes
         killtime = 10; # suspend after 10 minutes
         killer = "${pkgs.systemd}/bin/systemctl suspend";
@@ -118,7 +118,7 @@
     fish.enable = true;
     xss-lock = {
       enable = true;
-      lockerCommand = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
+      lockerCommand = "${pkgs.betterlockscreen}/bin/betterlockscreen -l dim";
     };
   };
   sound.enable = true;
