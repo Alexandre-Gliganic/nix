@@ -9,6 +9,7 @@ in
   home.packages = with pkgs; [
     ansible
     any-nix-shell
+    apache-directory-studio
     awscli2
     bat
     bc
