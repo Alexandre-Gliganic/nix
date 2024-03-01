@@ -24,33 +24,32 @@ in
     fzf
     gcc
     git-lfs
-    go
     glow
+    go
     google-chrome
     htop
     inetutils
     ipcalc
-    unstable.jetbrains.idea-ultimate
     jdk17_headless
     jq
+    kitty
     kubectl
     kubectx
-    kitty
     kustomize
     ldns
-    lunarvim
     lolcat
+    lunarvim
     maven
     meslo-lgs-nf
     mtr
     neofetch
-    nload
     nix
     nix-prefetch-git
     nixpkgs-fmt
+    nload
+    nmap
     nodejs_20
     novnc
-    nmap
     openssh
     opentofu
     python310Packages.pip
@@ -59,9 +58,11 @@ in
     tcptraceroute
     thunderbird
     tree
+    unstable.jetbrains.idea-ultimate
     vault
     watch
     wget
+    winbox
     xca
     yarn
     zoxide
