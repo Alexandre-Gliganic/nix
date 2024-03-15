@@ -12,8 +12,8 @@
     fzf
     gcc
     git-lfs
-    go
     glow
+    go
     htop
     inetutils
     ipcalc
@@ -29,14 +29,14 @@
     nix
     nix-prefetch-git
     nixpkgs-fmt
+    nmap
     nodejs_20
     novnc
-    nmap
     openssh
+    opentofu
     python310Packages.pip
     python311
     tcptraceroute
-    terraform
     trash-cli
     tree
     vault

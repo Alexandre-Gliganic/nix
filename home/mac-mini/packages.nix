@@ -26,14 +26,14 @@
     nix
     nix-prefetch-git
     nixpkgs-fmt
-    novnc
     nmap
+    novnc
     openssh
+    opentofu
     python310Packages.pip
     python311
     stern
     tcptraceroute
-    terraform
     trash-cli
     tree
     vault
