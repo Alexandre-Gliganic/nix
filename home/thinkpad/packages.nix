@@ -63,6 +63,7 @@ in
     watch
     wget
     winbox
+    wireshark
     xca
     yarn
     zoxide
