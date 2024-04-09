@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    alacritty
     ansible
     any-nix-shell
     awscli2
