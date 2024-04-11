@@ -94,6 +94,7 @@
         mbp = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
           modules = [
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 
             ./home/mbp/default.nix
 
@@ -101,6 +102,12 @@
               home = {
                 username = "alex";
                 homeDirectory = "/Users/alex";
+              };
+              nix = {
+                registry = {
+                  nixpkgs.flake = nixpkgs;
+                  nixpkgs-unstable.flake = nixpkgs-unstable;
+                };
               };
             }
           ];

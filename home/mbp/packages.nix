@@ -23,6 +23,7 @@
     ldns
     lolcat
     maven
+    mc
     mtr
     neofetch
     nix

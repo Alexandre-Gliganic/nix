@@ -59,6 +59,7 @@ in
     thunderbird
     tree
     unstable.jetbrains.idea-ultimate
+    unstable.xca
     vault
     watch
     wget
