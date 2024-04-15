@@ -123,7 +123,10 @@
   };
   sound.enable = true;
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+      docker.enable = true;
+      libvirtd.enable = true;
+  };
 
   nix = {
     gc = {

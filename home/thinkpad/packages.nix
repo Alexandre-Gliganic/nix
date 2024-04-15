@@ -67,5 +67,7 @@ in
     xca
     yarn
     zoxide
+    libvirt
+    virt-manager
   ];
 }
