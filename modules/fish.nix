@@ -101,6 +101,25 @@
       gllf = { description = "Git log custom full"; body = "git log --color --graph --pretty=format:'%C(bold red)%h%Creset %C(bold green)%G?:%Creset%C(auto)%d%Creset %s %C(bold cyan)(%cr)%Creset'"; };
 
 
+      # GPG
+      encrypt = {
+        description = "GPG encrypt";
+        body = ''
+          set output $argv[1].encrypted
+          gpg --output $output --encrypt --armor $argv[2..-1] $argv[1]
+          echo "Encrypted file: $output"
+        '';
+        wraps = "gpg";
+      };
+
+      decrypt = {
+        description = "GPG decrypt";
+        body = ''
+          gpg --decrypt $argv[1]
+        '';
+        wraps = "gpg";
+      };
+
       # Kubernetes
       k = { description = "Kubectl"; body = "kubectl $argv"; wraps = "kubectl"; };
       kcx = { description = "Kubectx"; body = "kubectx $argv"; wraps = "kubectx"; };
