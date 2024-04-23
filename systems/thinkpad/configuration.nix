@@ -124,8 +124,8 @@
   sound.enable = true;
 
   virtualisation = {
-      docker.enable = true;
-      libvirtd.enable = true;
+    docker.enable = true;
+    libvirtd.enable = true;
   };
 
   nix = {
