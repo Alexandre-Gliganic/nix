@@ -115,7 +115,7 @@
       decrypt = {
         description = "GPG decrypt";
         body = ''
-          gpg --decrypt $argv[1]
+          gpg --decrypt $argv[2..-1] $argv[1]
         '';
         wraps = "gpg";
       };
