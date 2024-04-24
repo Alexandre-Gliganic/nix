@@ -37,6 +37,7 @@ in
     kubectx
     kustomize
     ldns
+    libvirt
     lolcat
     lunarvim
     maven
@@ -59,7 +60,9 @@ in
     thunderbird
     tree
     unstable.jetbrains.idea-ultimate
+    unstable.postman
     vault
+    virt-manager
     watch
     wget
     winbox
@@ -67,7 +70,5 @@ in
     xca
     yarn
     zoxide
-    libvirt
-    virt-manager
   ];
 }
