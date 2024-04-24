@@ -144,6 +144,7 @@
   security.pki.certificateFiles = [
     ../../resources/OuiDoThings_-_Root_CA.crt
     ../../resources/CoreNinja_-_Root_CA.crt
+    ../../resources/Forge-Staging_-_ROOT_CA.crt
   ];
 
   # Configure keymap in X11
