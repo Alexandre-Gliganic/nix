@@ -39,7 +39,7 @@
     tcptraceroute
     trash-cli
     tree
-    vault
+    unstable.vault
     watch
     wget
     yarn
