@@ -94,6 +94,7 @@
       gst = { description = "git status"; body = "git status"; wraps = "git status"; };
       gls = { description = "git ls-files"; body = "git ls-files"; wraps = "git ls-files"; };
       gra = { description = "git remote add"; body = "git remote add $argv"; wraps = "git remote"; };
+      gs = { description = "git switch"; body = "git switch $argv"; wraps = "git switch"; };
 
       ## Git log
       gll = { description = "Git log custom"; body = "git log --color --graph --pretty=format:'%C(bold red)%h%Creset %C(bold green)%G?:%Creset%C(auto)%d%Creset %s %C(bold cyan)(%cr)%Creset' | head -30"; };
